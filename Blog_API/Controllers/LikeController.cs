@@ -1,4 +1,5 @@
 ﻿using Blog_API.Services.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace Blog_API.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class LikeController : ControllerBase
     {
         // Inject the service

@@ -1,5 +1,6 @@
 ﻿using Blog_API.DTOs;
 using Blog_API.Services.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Blog_API.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize( Roles = "Author,Admin" )]
     public class CategoryController : ControllerBase
     {
         // Inject the service

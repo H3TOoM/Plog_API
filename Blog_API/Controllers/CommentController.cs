@@ -1,5 +1,6 @@
 ﻿using Blog_API.DTOs;
 using Blog_API.Services.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Blog_API.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class CommentController : ControllerBase
     {
         // Inject the service
@@ -19,6 +21,7 @@ namespace Blog_API.Controllers
         // Get All Comments
 
         [HttpGet]
+        [Authorize( Roles = "Admin" )]
         public async Task<IActionResult> GetAllComments()
         {
             try
@@ -35,6 +38,8 @@ namespace Blog_API.Controllers
         // Get Commentby ID
 
         [HttpGet( "{id:int}" )]
+        [Authorize( Roles = "Admin" )]
+
         public async Task<IActionResult> GetCommentById( int id )
         {
             try
@@ -55,6 +60,7 @@ namespace Blog_API.Controllers
 
         // Get Comments by Plog ID
         [HttpGet( "plog/{plogId:int}" )]
+
         public async Task<IActionResult> GetCommentsByPlogId( int plogId )
         {
             try

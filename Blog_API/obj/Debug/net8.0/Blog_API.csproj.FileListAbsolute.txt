@@ -144,3 +144,6 @@ D:\Web API Projects\Blog_API\Blog_API\obj\Debug\net8.0\refint\Blog_API.dll
 D:\Web API Projects\Blog_API\Blog_API\obj\Debug\net8.0\Blog_API.pdb
 D:\Web API Projects\Blog_API\Blog_API\obj\Debug\net8.0\Blog_API.genruntimeconfig.cache
 D:\Web API Projects\Blog_API\Blog_API\obj\Debug\net8.0\ref\Blog_API.dll
+D:\Web API Projects\Blog_API\Blog_API\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Web API Projects\Blog_API\Blog_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Web API Projects\Blog_API\Blog_API\obj\Debug\net8.0\Blog_API.sourcelink.json

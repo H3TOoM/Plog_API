@@ -1,5 +1,6 @@
 ﻿using Blog_API.DTOs;
 using Blog_API.Services.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Blog_API.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize( Roles = "Author,Admin" )]
     public class PlogController : ControllerBase
     {
         // Inject the Plog service
@@ -19,6 +21,7 @@ namespace Blog_API.Controllers
 
         // Get all plogs
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllPlogs()
         {
             try
@@ -41,6 +44,7 @@ namespace Blog_API.Controllers
 
         // Get plog by ID
         [HttpGet( "{id:int}" )]
+        [Authorize]
         public async Task<IActionResult> GetPlogById( int id )
         {
             try

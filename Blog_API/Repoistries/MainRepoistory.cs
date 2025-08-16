@@ -1,6 +1,7 @@
 ﻿using Blog_API.Data;
 using Blog_API.Repoistries.Base;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Blog_API.Repoistries
 {
@@ -61,8 +62,11 @@ namespace Blog_API.Repoistries
         }
 
 
-
-
-
+        // Get entity by condition
+        public async Task<T> GetByConditionAsync( Expression<Func<T, bool>> predicate )
+        {
+           var entity = await _dbSet.FirstOrDefaultAsync( predicate );
+            return entity;
+        }
     }
 }
